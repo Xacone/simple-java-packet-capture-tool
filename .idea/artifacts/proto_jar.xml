@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="proto:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/proto_jar</output-path>
+    <root id="archive" name="proto.jar">
+      <element id="module-output" name="proto" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/../jnetpcap-1.4.r1425/jnetpcap.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-stdlib.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-reflect.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-test.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-stdlib-jdk7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$KOTLIN_BUNDLED$/lib/kotlin-stdlib-jdk8.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

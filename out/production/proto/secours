@@ -1,0 +1,54 @@
+             ANCIEN CAPTEUR
+
+
+             Thread ICMP_CAP_ALL = new Thread(new Runnable() {
+                                    int ICMP_CAPT = 0;
+
+                                    @Override
+                                    public void run() {
+                                        PcapPacketHandler handler = new PcapPacketHandler() {
+                                            @Override
+                                            public void nextPacket(PcapPacket pcapPacket, Object o) {
+                                                Icmp icmp = new Icmp();
+                                                if (pcapPacket.hasHeader(icmp))
+                                                {
+                                                    try {
+                                                        Thread.sleep(200);
+                                                    } catch (InterruptedException interruptedException) {
+                                                        interruptedException.printStackTrace();
+                                                    }
+                                                    System.out.println(date.date() + icmp.code() + " | " + icmp.checksum() + " | " + icmp.isChecksumValid() + r);
+                                                    logs.append(date.date() + icmp.code() + " | " + icmp.checksum() + " | " + icmp.isChecksumValid() + r);
+                                                    logs.append("Current thread: " + Thread.currentThread() + r);
+                                                    logs.append("Current Thread alive ?  " + Thread.currentThread().isAlive() + r);
+                                                    logs.append("Current Thread is interrupted ?  " + Thread.currentThread().isInterrupted() + r);
+                                                    logs.append("thread interrupted ?: " + Thread.interrupted() + r);
+                                                    logs.append("thread active count ?: " + Thread.activeCount() + r);
+                                                    logs.append("thread id ?: " + Thread.currentThread().getId() + r);
+
+                                                }
+                                            }
+                                        };
+
+
+                                            while(!Thread.interrupted())
+                                            {
+                                                if (icmp_ok[0] = true)
+                                                {
+                                                    try {
+                                                        Thread.sleep(500);
+                                                    } catch (InterruptedException interruptedException) {
+                                                        interruptedException.printStackTrace();
+                                                    }
+                                                    pcap.loop(1, handler, "pirate");
+
+                                                }
+                                            }
+
+
+
+                                    }
+
+
+
+                                });
